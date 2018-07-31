@@ -8,7 +8,13 @@
 
 原主题地址：[https://github.com/onevcat/vno-jekyll](https://github.com/onevcat/vno-jekyll)
 
-## 预览
+## 预览截图
+
+![](screenshots/index.png)
+
+![](screenshots/option.png)
+
+## 预览地址
 
 [OneV's Den](https://onevcat.com/)
 
