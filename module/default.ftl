@@ -17,7 +17,7 @@
     <meta property="og:description" content="${desc}">
     <link rel="icon" type="image/png" href="${options.vno_general_favicon?if_exists}" />
     <link href="${options.vno_general_favicon?if_exists}" rel="shortcut icon" type="image/png">
-    <link rel="stylesheet" href="/vno/source/css/main.css">
+    <link rel="stylesheet" href="/${themeName}/source/css/main.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="canonical" href="${canonical}">
     <link rel="alternate" type="application/rss+xml" title="${options.blog_title?if_exists}" href="/feed.xml">

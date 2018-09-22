@@ -1,10 +1,10 @@
 <header class="panel-cover <#if post??>panel-cover--collapsed</#if>"
-        style="background-image: url('${options.vno_general_cover_image?default("/vno/source/assets/images/background-cover.jpg")}')">
+        style="background-image: url('${options.vno_general_cover_image?default("/${themeName}/source/assets/images/background-cover.jpg")}')">
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content">
                 <a href="/#blog" title="前往 ${options.blog_title?if_exists} 的主页" class="blog-button">
-                    <img src="${user.userAvatar?default('/vno/source/assets/images/avatar.jpg')}" width="80" alt="${options.blog_title?if_exists} logo"
+                    <img src="${user.userAvatar?default('/${themeName}/source/assets/images/avatar.jpg')}" width="80" alt="${options.blog_title?if_exists} logo"
                         class="panel-cover__logo logo"/>
                 </a>
                 <h1 class="panel-cover__title panel-title">
