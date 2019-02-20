@@ -7,7 +7,7 @@
               <span class="post-meta__tags tags">
                   <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
-                        <a href="/tags/${tag.tagUrl}#blog">${tag.tagName}</a>&nbsp;
+                        <a href="${options.blog_url!}/tags/${tag.tagUrl}#blog">${tag.tagName}</a>&nbsp;
                     </#list>
                   </#if>
               </span>

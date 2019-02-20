@@ -3,7 +3,7 @@
     <div class="read-more-item">
         <span class="read-more-item-dim">最近的文章</span>
         <h2 class="post-list__post-title post-title">
-            <a href="/archives/${afterPost.postUrl}" title="link to ${afterPost.postTitle}">${afterPost.postTitle}</a>
+            <a href="${options.blog_url!}/archives/${afterPost.postUrl}" title="link to ${afterPost.postTitle}">${afterPost.postTitle}</a>
         </h2>
         <p class="excerpt">
                 ${afterPost.postSummary?if_exists}&hellip;
@@ -19,7 +19,7 @@
                 </#list>
               </#if>
             </span>
-            <a class="btn-border-small" href="/archives/${afterPost.postUrl}">继续阅读</a>
+            <a class="btn-border-small" href="${options.blog_url!}/archives/${afterPost.postUrl}">继续阅读</a>
         </div>
     </div>
     </#if>
@@ -27,7 +27,7 @@
     <div class="read-more-item">
         <span class="read-more-item-dim">更早的文章</span>
         <h2 class="post-list__post-title post-title">
-            <a href="/archives/${beforePost.postUrl}" title="link to ${beforePost.postTitle}">
+            <a href="${options.blog_url!}/archives/${beforePost.postUrl}" title="link to ${beforePost.postTitle}">
             ${beforePost.postTitle?if_exists}
             </a>
         </h2>
@@ -45,7 +45,7 @@
                 </#list>
               </#if>
             </span>
-            <a class="btn-border-small" href="/archives/${beforePost.postUrl}">继续阅读</a>
+            <a class="btn-border-small" href="${options.blog_url!}/archives/${beforePost.postUrl}">继续阅读</a>
         </div>
     </div>
     </#if>

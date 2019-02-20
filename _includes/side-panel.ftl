@@ -3,12 +3,12 @@
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content">
-                <a href="/#blog" title="前往 ${options.blog_title?if_exists} 的主页" class="blog-button">
+                <a href="${options.blog_url!}/#blog" title="前往 ${options.blog_title?if_exists} 的主页" class="blog-button">
                     <img src="${user.userAvatar?default('/${themeName}/source/assets/images/avatar.jpg')}" width="80" alt="${options.blog_title?if_exists} logo"
                         class="panel-cover__logo logo"/>
                 </a>
                 <h1 class="panel-cover__title panel-title">
-                    <a href="/#blog" title="link to homepage for ${options.blog_title?if_exists}" class="blog-button">${options.blog_title?if_exists}</a>
+                    <a href="${options.blog_url!}/#blog" title="link to homepage for ${options.blog_title?if_exists}" class="blog-button">${options.blog_title?if_exists}</a>
                 </h1>
                 <#if options.vno_general_subtitle??>
                 <span class="panel-cover__subtitle panel-subtitle">${options.vno_general_subtitle}</span>
@@ -26,7 +26,7 @@
                         <nav class="cover-navigation cover-navigation--primary">
                             <ul class="navigation">
                                 <li class="navigation__item">
-                                    <a href="/#blog" title="" class="blog-button">${options.vno_general_blog_button?default("博客")}</a>
+                                    <a href="${options.blog_url!}/#blog" title="" class="blog-button">${options.vno_general_blog_button?default("博客")}</a>
                                 </li>
                             ${options.vno_general_nav_button?if_exists}
                             </ul>
