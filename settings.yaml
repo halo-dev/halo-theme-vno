@@ -1,0 +1,63 @@
+general:
+  label: 基本设置
+  items:
+    subtitle:
+      name: subtitle
+      label: 副标题
+      type: text
+    welcome_message:
+      name: welcome_message
+      label: 欢迎信息
+      type: text
+    favicon:
+      name: favicon
+      label: Favicon
+      type: text
+    cover_image:
+      name: cover_image
+      label: 首页背景图片
+      type: text
+    cover_color:
+      name: cover_color
+      label: 首页背景颜色
+      type: text
+      default: 'red'
+    blog_button:
+      name: blog_button
+      label: 博客按钮名称
+      type: text
+    nav_button:
+      name: nav_button
+      label: 导航按钮
+      type: textarea
+      default: '<li class="navigation__item"><a href="#" target="_blank" title="#">按照这个格式，可以多个</a></li>'
+sns:
+  label: 社交资料设置
+  items:
+    rss:
+      name: rss
+      label: RSS
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    weibo:
+      name: weibo
+      label: 微博
+      type: text
+    github:
+      name: github
+      label: GitHub 链接
+      type: text
+    google_plus:
+      name: google_plus
+      label: Google Plus
+      type: text
+    email:
+      name: email
+      label: Email
+      type: text

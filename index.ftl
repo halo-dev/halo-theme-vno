@@ -1,24 +1,24 @@
 <#include "module/default.ftl">
-<@default title="${options.blog_title?default('vno')}" keywords="${options.seo_keywords?if_exists}" desc="${options.seo_desc?if_exists}" canonical="${options.blog_url?if_exists}">
+<@default title="${options.blog_title!'vno'}" keywords="${options.seo_keywords!}" desc="${options.seo_descriptionription!}" canonical="${options.blog_url!}">
     <div class="main-post-list hidden">
         <ol class="post-list">
             <#list posts.content as post>
                 <li>
-                    <h2 class="post-list__post-title post-title"><a href="${options.blog_url!}/archives/${post.postUrl}"
-                                                                    title="访问 ${post.postTitle}">${post.postTitle}</a>
+                    <h2 class="post-list__post-title post-title"><a href="${options.blog_url!}/archives/${post.url}"
+                                                                    title="访问 ${post.title}">${post.title}</a>
                     </h2>
-                    <p class="excerpt">${post.postSummary}...</p>
+                    <p class="excerpt">${post.summary}...</p>
                     <div class="post-list__meta">
-                        <time datetime="${post.postDate}"
-                              class="post-list__meta--date date">${post.postDate?string("yyyy-MM-dd")}</time> &#8226;
+                        <time datetime="${post.createTime}"
+                              class="post-list__meta--date date">${post.createTime?string("yyyy-MM-dd")}</time> &#8226;
                         <span class="post-list__meta--tags tags">
                         <#if post.tags?? && post.tags?size gt 0>
                             <#list post.tags as tag>
-                                <a href="${options.blog_url!}/tags/${tag.tagUrl}#blog">${tag.tagName}</a>&nbsp;
+                                <a href="${options.blog_url!}/tags/${tag.slugName}#blog">${tag.name}</a>&nbsp;
                             </#list>
                         </#if>
                         </span>
-                        <a class="btn-border-small" href="${options.blog_url!}/archives/${post.postUrl}">继续阅读</a></div>
+                        <a class="btn-border-small" href="${options.blog_url!}/archives/${post.url}">继续阅读</a></div>
                     <hr class="post-list__divider"/>
                 </li>
             </#list>

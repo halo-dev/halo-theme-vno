@@ -4,11 +4,11 @@
         <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
             <header class="post-header">
                 <div class="post-meta">
-                    <time datetime="${post.postDate}" itemprop="datePublished" class="post-meta__date date">
-                        ${post.postDate?string("yyyy-MM-dd")}
+                    <time datetime="${post.createTime}" itemprop="datePublished" class="post-meta__date date">
+                        ${post.createTime?string("yyyy-MM-dd")}
                     </time>
                 </div>
-                <h1 class="post-title">${post.postTitle}</h1>
+                <h1 class="post-title">${post.title}</h1>
             </header>
             <section class="post">
             <#nested/>
