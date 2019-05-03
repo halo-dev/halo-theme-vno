@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>${title}</title>
     <meta name="description" content="${desc}">
-    <meta name="author" content="${user.nickName!}">
+    <meta name="author" content="${user.nickname!}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${desc}">
