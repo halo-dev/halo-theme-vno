@@ -1,4 +1,5 @@
 <#macro default title="" keywords="" desc="" canonical="">
+<#include "/common/macro/common_macro.ftl">
 <!DOCTYPE html>
 <html>
 
@@ -15,8 +16,9 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${desc}">
-    <link rel="icon" type="image/png" href="${settings.favicon!}" />
-    <link href="${settings.favicon!}" rel="shortcut icon" type="image/png">
+
+    <@globalHeader />
+
     <link rel="stylesheet" href="/${theme.folderName}/source/css/main.css">
     <link href="//cdnjs.loli.net/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="canonical" href="${canonical}">

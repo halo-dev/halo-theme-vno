@@ -15,5 +15,6 @@
             </section>
         </article>
         <#include "../_includes/comments.ftl">
+            <@comment post=sheet type="sheet" />
     </@default>
 </#macro>

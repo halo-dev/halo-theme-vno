@@ -9,10 +9,6 @@ general:
       name: welcome_message
       label: 欢迎信息
       type: text
-    favicon:
-      name: favicon
-      label: Favicon
-      type: text
     cover_image:
       name: cover_image
       label: 首页背景图片

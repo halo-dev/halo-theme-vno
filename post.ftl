@@ -20,4 +20,5 @@
   </article>
   <#include "_includes/read-more.ftl">
   <#include "_includes/comments.ftl">
+<@comment post=post type="post" />
 </@default>
