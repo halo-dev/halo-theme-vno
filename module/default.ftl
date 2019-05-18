@@ -19,10 +19,10 @@
 
     <@globalHeader />
 
-    <link rel="stylesheet" href="/${theme.folderName}/source/css/main.css">
+    <link rel="stylesheet" href="/${static!}/source/css/main.css">
     <link href="//cdnjs.loli.net/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="canonical" href="${canonical}">
-    <link rel="alternate" type="application/rss+xml" title="${options.blog_title!}" href="${options.blog_url!}/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="${options.blog_title!}" href="${ctx!}/feed.xml">
     <meta name="google-site-verification" content="" />
 </head>
 <body>
