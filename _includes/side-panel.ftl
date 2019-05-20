@@ -1,14 +1,14 @@
 <header class="panel-cover <#if post??>panel-cover--collapsed</#if>"
-        style="background-image: url('${settings.cover_image?default("/${static!}/source/assets/images/background-cover.jpg")}')">
+        style="background-image: url('${settings.cover_image?default("${static!}/source/assets/images/background-cover.jpg")}')">
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content">
-                <a href="${ctx!}/#blog" title="前往 ${options.blog_title!} 的主页" class="blog-button">
-                    <img src="${user.avatar?default('/${static!}/source/assets/images/avatar.jpg')}" width="80" alt="${options.blog_title!} logo"
+                <a href="${context!}/#blog" title="前往 ${options.blog_title!} 的主页" class="blog-button">
+                    <img src="${user.avatar?default('${static!}/source/assets/images/avatar.jpg')}" width="80" alt="${options.blog_title!} logo"
                         class="panel-cover__logo logo"/>
                 </a>
                 <h1 class="panel-cover__title panel-title">
-                    <a href="${ctx!}/#blog" title="link to homepage for ${options.blog_title!}" class="blog-button">${options.blog_title!}</a>
+                    <a href="${context!}/#blog" title="link to homepage for ${options.blog_title!}" class="blog-button">${options.blog_title!}</a>
                 </h1>
                 <#if settings.subtitle??>
                 <span class="panel-cover__subtitle panel-subtitle">${options.subtitle}</span>
@@ -26,7 +26,7 @@
                         <nav class="cover-navigation cover-navigation--primary">
                             <ul class="navigation">
                                 <li class="navigation__item">
-                                    <a href="${ctx!}/#blog" title="" class="blog-button">${settings.blog_button!'博客'}</a>
+                                    <a href="${context!}/#blog" title="" class="blog-button">${settings.blog_button!'博客'}</a>
                                 </li>
                             ${settings.nav_button!}
                             </ul>

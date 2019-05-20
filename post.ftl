@@ -1,5 +1,5 @@
 <#include "module/default.ftl">
-<@default title="${post.title} - ${options.blog_title?default('vno')}" keywords="${options.seo_keywords!}" desc="${post.summary!}" canonical="${ctx!}/archives/${post.url}">
+<@default title="${post.title} - ${options.blog_title?default('vno')}" keywords="${options.seo_keywords!}" desc="${post.summary!}" canonical="${context!}/archives/${post.url}">
   <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
       <header class="post-header">
           <div class="post-meta">
@@ -7,7 +7,7 @@
               <span class="post-meta__tags tags">
                   <#if tags?? && tags?size gt 0>
                     <#list tags as tag>
-                        <a href="${ctx!}/tags/${tag.slugName}#blog">${tag.name}</a>&nbsp;
+                        <a href="${context!}/tags/${tag.slugName}#blog">${tag.name}</a>&nbsp;
                     </#list>
                   </#if>
               </span>
