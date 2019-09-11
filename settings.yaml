@@ -12,7 +12,7 @@ general:
     cover_image:
       name: cover_image
       label: 首页背景图片
-      type: text
+      type: attachment
     cover_color:
       name: cover_color
       label: 首页背景颜色
