@@ -18,7 +18,7 @@
                 <hr class="panel-cover__divider panel-cover__divider--secondary"/>
 
                 <#if settings.welcome_message??>
-                <p class="panel-cover__description">${options.welcome_message}</p>
+                <p class="panel-cover__description">${settings.welcome_message!}</p>
                 </#if>
 
                 <div class="navigation-wrapper">
@@ -38,8 +38,8 @@
                 </div>
             </div>
         </div>
-        <#if (options.cover_color!'red') != ''>
-            <div class="panel-cover--overlay cover-${options.cover_color!'red'}"></div>
+        <#if (settings.cover_color!'red') != ''>
+            <div class="panel-cover--overlay cover-${settings.cover_color!'red'}"></div>
         <#else>
             <div class="panel-cover--overlay cover-disabled"></div>
         </#if>
