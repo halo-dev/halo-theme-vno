@@ -11,7 +11,7 @@
                     <a href="${context!}/#blog" title="link to homepage for ${options.blog_title!}" class="blog-button">${options.blog_title!}</a>
                 </h1>
                 <#if settings.subtitle??>
-                <span class="panel-cover__subtitle panel-subtitle">${options.subtitle}</span>
+                <span class="panel-cover__subtitle panel-subtitle">${settings.subtitle!}</span>
                 </#if>
                 <hr class="panel-cover__divider"/>
                 <p class="panel-cover__description">${user.description!}</p>
