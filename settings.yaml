@@ -16,17 +16,33 @@ general:
     cover_color:
       name: cover_color
       label: 首页背景颜色
-      type: text
+      type: select
       default: 'red'
-    blog_button:
-      name: blog_button
+      options:
+        - value: blue
+          label: blue
+        - value: green
+          label: green
+        - value: purple
+          label: purple
+        - value: red
+          label: red
+        - value: orange
+          label: orange
+        - value: slate
+          label: slate
+        - value: empty
+          label: 空
+    blog_button_title:
+      name: blog_button_title
       label: 博客按钮名称
       type: text
-    nav_button:
-      name: nav_button
-      label: 导航按钮
-      type: textarea
-      default: '<li class="navigation__item"><a href="#" target="_blank" title="#">按照这个格式，可以多个</a></li>'
+      default: 'Blog'
+    blog_button_description:
+      name: blog_button_description
+      label: 博客按钮描述
+      type: text
+      default: 'Visit blog'
 sns:
   label: 社交资料设置
   items:

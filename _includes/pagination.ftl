@@ -1,5 +1,6 @@
 <#macro nav url="">
 <hr class="post-list__divider " />
+
 <nav class="pagination" role="navigation">
     <#if posts.totalPages gt 1>
         <#if posts.hasPrevious()>

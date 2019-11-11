@@ -1,5 +1,4 @@
-<#macro default title="" keywords="" desc="" canonical="">
-<#include "/common/macro/common_macro.ftl">
+<#macro default title keywords description canonical>
 <!DOCTYPE html>
 <html>
 
@@ -7,37 +6,48 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>${title}</title>
-    <meta name="description" content="${desc}">
-    <meta name="author" content="${user.nickname!}">
+
+    <title>${title!}</title>
+    <meta name="description" content="${description!}">
+    <meta name="author" content="Wei Wang">
+
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="${title}">
-    <meta name="twitter:description" content="${desc}">
+    <meta name="twitter:title" content="${title!}">
+    <meta name="twitter:description" content="${description!}">
+
     <meta property="og:type" content="article">
-    <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${desc}">
+    <meta property="og:title" content="${title!}">
+    <meta property="og:description" content="${description!}">
 
-    <@globalHeader />
+    <@global.head/>
 
-    <link rel="stylesheet" href="${static!}/source/css/main.css">
-    <link href="//cdnjs.loli.net/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="canonical" href="${canonical}">
+    <link rel="stylesheet" href="${static!}/css/main.css">
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="canonical" href="${canonical!}">
     <link rel="alternate" type="application/rss+xml" title="${options.blog_title!}" href="${context!}/feed.xml">
-    <meta name="google-site-verification" content="" />
+
 </head>
+
 <body>
+
     <span class="mobile btn-mobile-menu">
         <i class="fa fa-list btn-mobile-menu__icon"></i>
         <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
     </span>
+    
     <#include "../_includes/side-panel.ftl">
+
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <#nested >
-            <#include "../_includes/footer.ftl"/>
+            <#nested />
+            <#include "../_includes/footer.ftl">
         </div>
     </div>
+    
     <#include "../_includes/external.ftl">
+    
   </body>
+
 </html>
 </#macro>
