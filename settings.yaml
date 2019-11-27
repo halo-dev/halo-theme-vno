@@ -43,6 +43,85 @@ general:
       label: 博客按钮描述
       type: text
       default: 'Visit blog'
+    prettify_enable:
+      name: prettify_enable
+      label: Prettify 代码高亮插件
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    prettify_theme:
+      name: prettify_theme
+      label: Prettify 代码高亮主题
+      type: select
+      default: github-v2
+      options:
+        - value: atelier-seaside-dark
+          label: atelier-seaside-dark
+        - value: atelier-plateau-light
+          label: atelier-plateau-light
+        - value: atelier-sulphurpool-dark
+          label: atelier-sulphurpool-dark
+        - value: tomorrow-night-blue
+          label: tomorrow-night-blue
+        - value: atelier-heath-dark
+          label: atelier-heath-dark
+        - value: vibrant-ink
+          label: vibrant-ink
+        - value: atelier-heath-light
+          label: atelier-heath-light
+        - value: atelier-dune-dark
+          label: atelier-dune-dark
+        - value: tranquil-heart
+          label: tranquil-heart
+        - value: atelier-estuary-light
+          label: atelier-estuary-light
+        - value: atelier-seaside-light
+          label: atelier-seaside-light
+        - value: tomorrow-night-eighties
+          label: tomorrow-night-eighties
+        - value: atelier-savanna-dark
+          label: atelier-savanna-dark
+        - value: atelier-forest-dark
+          label: atelier-forest-dark
+        - value: tomorrow-night
+          label: tomorrow-night
+        - value: atelier-lakeside-dark
+          label: atelier-lakeside-dark
+        - value: tomorrow
+          label: tomorrow
+        - value: atelier-forest-light
+          label: atelier-forest-light
+        - value: hemisu-dark
+          label: hemisu-dark
+        - value: github
+          label: github
+        - value: atelier-cave-light
+          label: atelier-cave-light
+        - value: github-v2
+          label: github-v2
+        - value: atelier-sulphurpool-light
+          label: atelier-sulphurpool-light
+        - value: atelier-plateau-dark
+          label: atelier-plateau-dark
+        - value: atelier-cave-dark
+          label: atelier-cave-dark
+        - value: tomorrow-night-bright
+          label: tomorrow-night-bright
+        - value: atelier-savanna-light
+          label: atelier-savanna-light
+        - value: atelier-estuary-dark
+          label: atelier-estuary-dark
+        - value: atelier-dune-light
+          label: atelier-dune-light
+        - value: atelier-lakeside-light
+          label: atelier-lakeside-light
+        - value: hemisu-light
+          label: hemisu-light
 sns:
   label: 社交资料设置
   items:
