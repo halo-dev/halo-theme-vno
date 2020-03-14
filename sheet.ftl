@@ -1,6 +1,6 @@
 <#include "_layouts/default.ftl">
 <#include "_includes/comments.ftl">
-<@default title="${sheet.title!} - ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}" canonical="${context!}/s/${sheet.url}">
+<@default title="${sheet.title!} - ${blog_title!}" canonical="${sheet.fullPath!}">
     <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
             <div class="post-meta">

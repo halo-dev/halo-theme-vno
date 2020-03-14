@@ -7,4 +7,5 @@ description:
 logo:
 website: https://github.com/halo-dev/halo-theme-vno
 repo: https://github.com/halo-dev/halo-theme-vno
-version: 1.4
+version: 1.4.1
+require: 1.3.0

@@ -45,7 +45,7 @@
     <#if settings.rss!true>
       <!-- RSS -->
       <li class="navigation__item">
-        <a href="${context!}/feed.xml" rel="author" title="RSS" target="_blank">
+        <a href="${rss_url!}" rel="author" title="RSS" target="_blank">
           <i class='social fa fa-rss'></i>
           <span class="label">RSS</span>
         </a>

@@ -1,11 +1,11 @@
-<header class="panel-cover <#if is_post?? || is_sheet??>panel-cover--collapsed</#if>" style="background-image: url('${settings.cover_image!"${static!}/assets/images/background-cover.jpg"}')">
+<header class="panel-cover <#if is_post?? || is_sheet??>panel-cover--collapsed</#if>" style="background-image: url('${settings.cover_image!"${theme_base!}/assets/images/background-cover.jpg"}')">
   <div class="panel-main">
 
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="${context!}/#blog" title="前往 ${options.blog_title!} 的主页" class="blog-button"><img src="${user.avatar!}" width="80" alt="${options.blog_title!} logo" class="panel-cover__logo logo" /></a>
-        <h1 class="panel-cover__title panel-title"><a href="${context!}/#blog" title="link to homepage for ${options.blog_title!}" class="blog-button">${options.blog_title!}</a></h1>
+        <a href="${context!}/#blog" title="前往 ${blog_title!} 的主页" class="blog-button"><img src="${user.avatar!}" width="80" alt="${blog_title!} logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="${context!}/#blog" title="link to homepage for ${blog_title!}" class="blog-button">${blog_title!}</a></h1>
         <#if settings.subtitle?? && settings.subtitle!=''>
         <span class="panel-cover__subtitle panel-subtitle">${settings.subtitle!}</span>
         </#if>
