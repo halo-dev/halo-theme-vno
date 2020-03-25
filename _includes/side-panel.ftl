@@ -4,8 +4,8 @@
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="${context!}/#blog" title="前往 ${blog_title!} 的主页" class="blog-button"><img src="${user.avatar!}" width="80" alt="${blog_title!} logo" class="panel-cover__logo logo" /></a>
-        <h1 class="panel-cover__title panel-title"><a href="${context!}/#blog" title="link to homepage for ${blog_title!}" class="blog-button">${blog_title!}</a></h1>
+        <a href="${blog_url!}/#blog" title="前往 ${blog_title!} 的主页" class="blog-button"><img src="${user.avatar!}" width="80" alt="${blog_title!} logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="${blog_url!}/#blog" title="link to homepage for ${blog_title!}" class="blog-button">${blog_title!}</a></h1>
         <#if settings.subtitle?? && settings.subtitle!=''>
         <span class="panel-cover__subtitle panel-subtitle">${settings.subtitle!}</span>
         </#if>
@@ -21,7 +21,7 @@
           <div>
             <nav class="cover-navigation cover-navigation--primary">
               <ul class="navigation">
-                <li class="navigation__item"><a href="${context!}/#blog" title="${settings.blog_button_description!}" class="blog-button">${settings.blog_button_title!}</a></li>
+                <li class="navigation__item"><a href="${blog_url!}/#blog" title="${settings.blog_button_description!}" class="blog-button">${settings.blog_button_title!}</a></li>
                 <@menuTag method="list">
                   <#list menus?sort_by('priority') as menu>
                       <li class="navigation__item"><a href="${menu.url}" target="${menu.target!}" title="${menu.name}">${menu.name}</a></li>
