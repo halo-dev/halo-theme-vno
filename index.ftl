@@ -1,12 +1,11 @@
 <#include "_layouts/default.ftl">
-<#include "_includes/pagination.ftl">
-<@default title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}" canonical="${context!}">
+<@default title="${blog_title!}" canonical="${blog_url!}">
 <div class="main-post-list hidden">
 
   <ol class="post-list">
     <#list posts.content as post>
     <li>
-      <h2 class="post-list__post-title post-title"><a href="${context!}/archives/${post.url!}" title="访问 ${post.title!}">${post.title!}</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="${post.fullPath!}" title="访问 ${post.title!}">${post.title!}</a></h2>
       <p class="excerpt">${post.summary!}&hellip;</p>
       <div class="post-list__meta">
         <time datetime="${post.createTime}" class="post-list__meta--date date">${post.createTime?string("yyyy-MM-dd")}</time>
@@ -14,15 +13,28 @@
             <#if post.tags?? && post.tags?size gt 0>
               <#list post.tags as tag>
                 &#8226;
-                <a href="${context!}/tags/${tag.slugName}#blog">${tag.name}</a>&nbsp
+                <a href="${tag.fullPath!}#blog">${tag.name}</a>&nbsp
               </#list>
             </#if>
         </span>
-        <a class="btn-border-small" href="${context!}/archives/${post.url}">继续阅读</a></div>
+        <a class="btn-border-small" href="${post.fullPath!}">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
     </#list>
   </ol>
-  <@nav url = "${context!}/"></@nav>
+  <hr class="post-list__divider " />
+  <nav class="pagination" role="navigation">
+    <#if posts.totalPages gt 1>
+      <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
+        <#if pagination.hasPrev>
+          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="${pagination.prevPageFullPath!}#blog">&larr; 最近</a>
+        </#if>
+        <span class="pagination__page-number">${posts.number+1} / ${posts.totalPages}</span>
+        <#if pagination.hasNext>
+          <a class="older-posts pagination__older btn btn-small btn-tertiary" href="${pagination.nextPageFullPath!}#blog">更早 &rarr;</a>
+        </#if>
+      </@paginationTag>
+    </#if>
+  </nav>
 </div>
 </@default>
