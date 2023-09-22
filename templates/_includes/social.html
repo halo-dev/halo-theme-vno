@@ -1,0 +1,57 @@
+<nav class="cover-navigation navigation--social">
+    <ul class="navigation">
+        <th:block th:if="${theme.config.general.sns.weibo != ''}">
+            <li class="navigation__item">
+                <a th:href="|http://weibo.com/${theme.config.general.sns.weibo}|"
+                    th:title="|@${theme.config.general.sns.weibo} 的微博|" target="_blank">
+                    <i class='social fa fa-weibo'></i>
+                    <span class="label">Weibo</span>
+                </a>
+            </li>
+
+        </th:block>
+        <!-- Weibo -->
+
+        <th:block th:if="${theme.config.general.sns.github != ''}">
+            <li class="navigation__item">
+                <a th:href="|https://github.com/${theme.config.general.sns.github}|"
+                    th:title="|@${theme.config.general.sns.github} 的Github|" target="_blank">
+                    <i class='social fa fa-github'></i>
+                    <span class="label">Github</span>
+                </a>
+            </li>
+
+        </th:block>
+        <th:block th:if="${theme.config.general.sns.twitter != ''}">
+            <li class="navigation__item">
+                <a th:href="|http://twitter.com/${theme.config.general.sns.twitter}|"
+                    th:title="|@${theme.config.general.sns.twitter}|" target="_blank">
+                    <i class='social fa fa-twitter'></i>
+                    <span class="label">Twitter</span>
+                </a>
+            </li>
+
+        </th:block>
+        <th:block th:if="${theme.config.general.sns.google_plus != ''}">
+            <li class="navigation__item">
+                <a th:href="|https://plus.google.com/${theme.config.general.sns.google_plus}|" rel="author"
+                    title="Google+" target="_blank">
+                    <i class='social fa fa-google-plus-square'></i>
+                    <span class="label">Google Plus</span>
+                </a>
+            </li>
+
+        </th:block>
+        <th:block th:if="${theme.config.general.sns.email != ''}">
+            <li class="navigation__item">
+                <a th:href="|mailto:${theme.config.general.sns.email}|" title="Contact me">
+                    <i class='social fa fa-envelope'></i>
+                    <span class="label">Email</span>
+                </a>
+            </li>
+
+        </th:block>
+
+
+    </ul>
+</nav>
