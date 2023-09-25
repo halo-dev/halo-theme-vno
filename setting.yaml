@@ -1,0 +1,133 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: halo-setting-vno
+spec:
+  forms:
+    - group: general
+      label: 基本设置
+      formSchema:
+        - $formkit: text
+          name: welcome_message
+          label: 欢迎信息
+        - $formkit: attachment
+          name: cover_image
+          label: 首页背景图片
+        - $formkit: select
+          name: cover_color
+          label: 首页背景颜色
+          value: red
+          options:
+            - value: blue
+              label: blue
+            - value: green
+              label: green
+            - value: purple
+              label: purple
+            - value: red
+              label: red
+            - value: orange
+              label: orange
+            - value: slate
+              label: slate
+            - value: empty
+              label: 空
+        - $formkit: text
+          name: blog_button_title
+          label: 博客按钮名称
+          value: Blog
+        - $formkit: text
+          name: blog_button_description
+          label: 博客按钮描述
+          value: Visit blog
+        - $formkit: radio
+          name: prettify_enable
+          label: Prettify 代码高亮插件
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: select
+          name: prettify_theme
+          label: Prettify 代码高亮主题
+          value: github-v2
+          options:
+            - value: atelier-seaside-dark
+              label: atelier-seaside-dark
+            - value: atelier-plateau-light
+              label: atelier-plateau-light
+            - value: atelier-sulphurpool-dark
+              label: atelier-sulphurpool-dark
+            - value: tomorrow-night-blue
+              label: tomorrow-night-blue
+            - value: atelier-heath-dark
+              label: atelier-heath-dark
+            - value: vibrant-ink
+              label: vibrant-ink
+            - value: atelier-heath-light
+              label: atelier-heath-light
+            - value: atelier-dune-dark
+              label: atelier-dune-dark
+            - value: tranquil-heart
+              label: tranquil-heart
+            - value: atelier-estuary-light
+              label: atelier-estuary-light
+            - value: atelier-seaside-light
+              label: atelier-seaside-light
+            - value: tomorrow-night-eighties
+              label: tomorrow-night-eighties
+            - value: atelier-savanna-dark
+              label: atelier-savanna-dark
+            - value: atelier-forest-dark
+              label: atelier-forest-dark
+            - value: tomorrow-night
+              label: tomorrow-night
+            - value: atelier-lakeside-dark
+              label: atelier-lakeside-dark
+            - value: tomorrow
+              label: tomorrow
+            - value: atelier-forest-light
+              label: atelier-forest-light
+            - value: hemisu-dark
+              label: hemisu-dark
+            - value: github
+              label: github
+            - value: atelier-cave-light
+              label: atelier-cave-light
+            - value: github-v2
+              label: github-v2
+            - value: atelier-sulphurpool-light
+              label: atelier-sulphurpool-light
+            - value: atelier-plateau-dark
+              label: atelier-plateau-dark
+            - value: atelier-cave-dark
+              label: atelier-cave-dark
+            - value: tomorrow-night-bright
+              label: tomorrow-night-bright
+            - value: atelier-savanna-light
+              label: atelier-savanna-light
+            - value: atelier-estuary-dark
+              label: atelier-estuary-dark
+            - value: atelier-dune-light
+              label: atelier-dune-light
+            - value: atelier-lakeside-light
+              label: atelier-lakeside-light
+            - value: hemisu-light
+              label: hemisu-light
+    - group: sns
+      label: 社交资料设置
+      formSchema:
+        - $formkit: text
+          name: weibo
+          label: 微博
+        - $formkit: text
+          name: github
+          label: GitHub 链接
+        - $formkit: text
+          name: google_plus
+          label: Google Plus
+        - $formkit: text
+          name: email
+          label: Email
