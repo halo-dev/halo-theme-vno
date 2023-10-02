@@ -1,7 +1,7 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: halo-setting-vno
+  name: theme-vno-setting
 spec:
   forms:
     - group: general

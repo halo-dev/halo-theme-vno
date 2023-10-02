@@ -1,53 +1,67 @@
-<header th:fragment="side(isPost)" class="panel-cover" th:classappend="${isPost==null? '':'panel-cover--collapsed'}"
-    th:style="|background-image:url('${theme.config.general.cover_image?:'/themes/halo-theme-vno/assets/images/background-cover.jpg'}')|">
-    <div class="panel-main">
-        <div class="panel-main__inner panel-inverted">
-            <div class="panel-main__content">
-                <a th:href="|${site.url}#blog|" th:title="|前往 ${site.title} 的主页|" class="blog-button"><img
-                        th:src="${site.logo}" width="80" th:alt="|${site.title} logo|"
-                        class="panel-cover__logo logo" /></a>
-                <h1 class="panel-cover__title panel-title"><a th:href="${site.url}"
-                        th:title="|link to homepage for ${site.title}|" class="blog-button" th:text="${site.title}"></a>
-                </h1>
+<header
+  th:fragment="side(isPost)"
+  class="panel-cover"
+  th:classappend="${isPost==null? '':'panel-cover--collapsed'}"
+  th:style="|background-image:url('${theme.config.general.cover_image?:'/themes/halo-theme-vno/assets/images/background-cover.jpg'}')|"
+>
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a th:href="|${site.url}#blog|" th:title="|前往 ${site.title} 的主页|" class="blog-button"
+          ><img th:src="${site.logo}" width="80" th:alt="|${site.title} logo|" class="panel-cover__logo logo"
+        /></a>
+        <h1 class="panel-cover__title panel-title">
+          <a
+            th:href="${site.url}"
+            th:title="|link to homepage for ${site.title}|"
+            class="blog-button"
+            th:text="${site.title}"
+          ></a>
+        </h1>
 
-                <span class="panel-cover__subtitle panel-subtitle" th:text="${site.subtitle}"></span>
-                <hr class="panel-cover__divider" />
-                <hr class="panel-cover__divider panel-cover__divider--secondary" />
-                <th:block th:if="${theme.config.general.welcome_message}">
-                    <p class="panel-cover__description" th:text="${theme.config.general.welcome_message}"></p>
-                </th:block>
+        <span class="panel-cover__subtitle panel-subtitle" th:text="${site.subtitle}"></span>
+        <hr class="panel-cover__divider" />
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        <th:block th:if="${theme.config.general.welcome_message}">
+          <p class="panel-cover__description" th:text="${theme.config.general.welcome_message}"></p>
+        </th:block>
 
-                <div class="navigation-wrapper">
-                    <div>
-                        <nav class="cover-navigation cover-navigation--primary">
-                            <li class="navigation__item"><a class="blog-button"
-                                    th:title="${theme.config.general.blog_button_description}"
-                                    th:href="|${site.url}#blog|"
-                                    th:text="${theme.config.general.blog_button_title}"></a>
-                            </li>
-                            <ul class="navigation" th:with="menuItems = ${menuFinder.getPrimary().menuItems}">
-                                <li th:each="menuItem : ${menuItems}" class="navigation__item"><a
-                                        th:href="@{${menuItem.status.href}}" th:text="${menuItem.status.displayName}"
-                                        th:target="${menuItem.spec.target?.value}"
-                                        th:title="${menuItem.status.displayName}"></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <li class="navigation__item">
+                <a
+                  class="blog-button"
+                  th:title="${theme.config.general.blog_button_description}"
+                  th:href="|${site.url}#blog|"
+                  th:text="${theme.config.general.blog_button_title}"
+                ></a>
+              </li>
+              <ul class="navigation" th:with="menuItems = ${menuFinder.getPrimary().menuItems}">
+                <li th:each="menuItem : ${menuItems}" class="navigation__item">
+                  <a
+                    th:href="@{${menuItem.status.href}}"
+                    th:text="${menuItem.status.displayName}"
+                    th:target="${menuItem.spec.target?.value}"
+                    th:title="${menuItem.status.displayName}"
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-                    <div>
-                        <th:block th:replace="~{_includes/social}"></th:block>
-                    </div>
-                </div>
-            </div>
+          <div>
+            <th:block th:replace="~{_includes/social}"></th:block>
+          </div>
         </div>
-
-        <th:block th:if="${theme.config.general.cover_color} and ${theme.config.general.cover_color != 'empty'}">
-            <div class="panel-cover--overlay" th:classappend="|cover-${theme.config.general.cover_color}|"></div>
-        </th:block>
-        <th:block th:unless="${theme.config.general.cover_color} and ${theme.config.general.cover_color != 'empty'}">
-            <div class="panel-cover--overlay cover-disabled"></div>
-        </th:block>
-
+      </div>
     </div>
+
+    <th:block th:if="${theme.config.general.cover_color} and ${theme.config.general.cover_color != 'empty'}">
+      <div class="panel-cover--overlay" th:classappend="|cover-${theme.config.general.cover_color}|"></div>
+    </th:block>
+    <th:block th:unless="${theme.config.general.cover_color} and ${theme.config.general.cover_color != 'empty'}">
+      <div class="panel-cover--overlay cover-disabled"></div>
+    </th:block>
+  </div>
 </header>

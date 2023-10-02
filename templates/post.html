@@ -1,62 +1,73 @@
-<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-    th:replace="~{layout :: html(title = | ${post.spec.title} - ${site.title}|,  content = ~{::content},isPost = true)}">
-<th:block th:fragment="content">
+<!doctype html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(title = | ${post.spec.title} - ${site.title}|,  content = ~{::content},isPost = true)}"
+>
+  <th:block th:fragment="content">
     <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-        <header class="post-header">
-            <div class="post-meta">
-                <time th:datetime="${post.metadata.creationTimestamp}" itemprop="datePublished"
-                    class="post-meta__date date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"></time>
-                <th:block th:if="${#lists.size(post.tags) gt 0}">
-                    <span class="post-meta__tags tags" th:each="tag : ${post.tags}">
-                        &#8226;
-                        <a th:href="|${tag.status.permalink}#blog|" th:text="${tag.spec.displayName}"></a>&nbsp;
-                </th:block>
+      <header class="post-header">
+        <div class="post-meta">
+          <time
+            th:datetime="${post.metadata.creationTimestamp}"
+            itemprop="datePublished"
+            class="post-meta__date date"
+            th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
+          ></time>
+          <th:block th:if="${#lists.size(post.tags) gt 0}">
+            <span class="post-meta__tags tags" th:each="tag : ${post.tags}">
+              &#8226;
+              <a th:href="|${tag.status.permalink}#blog|" th:text="${tag.spec.displayName}"></a>&nbsp;
+            </span>
+          </th:block>
+        </div>
+        <h1 class="post-title" th:text="${post.spec.title}"></h1>
+      </header>
 
-                </span>
-            </div>
-            <h1 class="post-title" th:text="${post.spec.title}"></h1>
-        </header>
-
-        <section class="post" th:utext="${post.content.content}">
-        </section>
+      <section class="post" th:utext="${post.content.content}"></section>
     </article>
     <section class="read-more" th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
-        <th:block th:if="${postCursor.hasPrevious()}">
-            <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a th:href="@{${postCursor.previous.status.permalink}}"
-                        th:title="|link to ${postCursor.previous.spec.title}|"></a></h2>
-                <p class="excerpt" th:utext="${postCursor.previous.status.excerpt}">
-                    <th:block>&hellip;</th:block>
-                </p>
-                <div class="post-list__meta">
-                    <time th:datetime="${postCursor.previous.metadata.creationTimestamp}"
-                        th:text="${#dates.format(postCursor.previous.metadata.creationTimestamp,'yyyy-MM-dd')}"
-                        class="post-list__meta--date date"></time>
-                    <a class="btn-border-small" th:href="${postCursor.previous.status.permalink}">继续阅读</a>
-                </div>
-            </div>
-        </th:block>
+      <th:block th:if="${postCursor.hasPrevious()}">
+        <div class="read-more-item">
+          <span class="read-more-item-dim">最近的文章</span>
+          <h2 class="post-list__post-title post-title">
+            <a
+              th:href="@{${postCursor.previous.status.permalink}}"
+              th:title="|link to ${postCursor.previous.spec.title}|"
+            ></a>
+          </h2>
+          <p class="excerpt" th:utext="${postCursor.previous.status.excerpt}">
+            <th:block>&hellip;</th:block>
+          </p>
+          <div class="post-list__meta">
+            <time
+              th:datetime="${postCursor.previous.metadata.creationTimestamp}"
+              th:text="${#dates.format(postCursor.previous.metadata.creationTimestamp,'yyyy-MM-dd')}"
+              class="post-list__meta--date date"
+            ></time>
+            <a class="btn-border-small" th:href="${postCursor.previous.status.permalink}">继续阅读</a>
+          </div>
+        </div>
+      </th:block>
 
-
-        <th:block th:if="${postCursor.hasNext()}">
-            <div class="read-more-item">
-                <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a th:href="@{${postCursor.next.status.permalink}}"
-                        th:title="|link to ${postCursor.next.spec.title}|"></a></h2>
-                <p class="excerpt" th:utext="${postCursor.next.status.excerpt}">
-                    <th:block>&hellip;</th:block>
-                </p>
-                <div class="post-list__meta">
-                    <time th:datetime="${postCursor.next.metadata.creationTimestamp}"
-                        th:text="${#dates.format(postCursor.next.metadata.creationTimestamp,'yyyy-MM-dd')}"
-                        class="post-list__meta--date date"></time>
-                    <a class="btn-border-small" th:href="${postCursor.next.status.permalink}">继续阅读</a>
-                </div>
-            </div>
-        </th:block>
+      <th:block th:if="${postCursor.hasNext()}">
+        <div class="read-more-item">
+          <span class="read-more-item-dim">更早的文章</span>
+          <h2 class="post-list__post-title post-title">
+            <a th:href="@{${postCursor.next.status.permalink}}" th:title="|link to ${postCursor.next.spec.title}|"></a>
+          </h2>
+          <p class="excerpt" th:utext="${postCursor.next.status.excerpt}">
+            <th:block>&hellip;</th:block>
+          </p>
+          <div class="post-list__meta">
+            <time
+              th:datetime="${postCursor.next.metadata.creationTimestamp}"
+              th:text="${#dates.format(postCursor.next.metadata.creationTimestamp,'yyyy-MM-dd')}"
+              class="post-list__meta--date date"
+            ></time>
+            <a class="btn-border-small" th:href="${postCursor.next.status.permalink}">继续阅读</a>
+          </div>
+        </div>
+      </th:block>
     </section>
-</th:block>
-
+  </th:block>
 </html>

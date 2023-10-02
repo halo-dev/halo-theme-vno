@@ -1,58 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" th:fragment="html (title,content,isPost)">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <title th:text="${title}"></title>
-    <meta name="description" th:content="${site.subtitle}">
-    <meta name="author" content="Wei Wang">
+    <meta name="description" th:content="${site.subtitle}" />
+    <meta name="author" content="Wei Wang" />
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="${title!}">
-    <meta name="twitter:description" th:content="${site.subtitle}">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="${title!}" />
+    <meta name="twitter:description" th:content="${site.subtitle}" />
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="${title!}">
-    <meta property="og:description" th:content="${site.subtitle}">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${title!}" />
+    <meta property="og:description" th:content="${site.subtitle}" />
 
-
-    <link rel="stylesheet" th:href="@{/assets/css/main.css}">
-    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <th:block th:if="${theme.config.general.prettify_enable}">
-        <script th:src="@{/assets/lib/prettify/js/prettify.min.js}"></script>
-        <link rel="stylesheet" th:href="@{/assets/lib/prettify/css/prettify.min.css}">
-        <link rel="stylesheet"
-            th:href="|/themes/halo-theme-vno/assets/lib/prettify/css/${theme.config.general.prettify_theme}.min.css|">
-        <script>
-            $(function () {
-                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-                prettyPrint();
-            })
-        </script>
+      <script th:src="@{/assets/lib/prettify/js/prettify.min.js}"></script>
+      <link rel="stylesheet" th:href="@{/assets/lib/prettify/css/prettify.min.css}" />
+      <link
+        rel="stylesheet"
+        th:href="|/themes/halo-theme-vno/assets/lib/prettify/css/${theme.config.general.prettify_theme}.min.css|"
+      />
+      <script>
+        $(function () {
+          $("pre").addClass("prettyprint linenums").attr("style", "overflow:auto;");
+          prettyPrint();
+        });
+      </script>
     </th:block>
-</head>
+  </head>
 
-<body>
+  <body>
     <span class="mobile btn-mobile-menu">
-        <i class="fa fa-list btn-mobile-menu__icon"></i>
-        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+      <i class="fa fa-list btn-mobile-menu__icon"></i>
+      <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
     </span>
+
     <th:block th:replace="~{_includes/side-panel :: side(${isPost})}"></th:block>
 
     <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            <th:block th:replace="${content}"></th:block>
-            <th:block th:replace="~{_includes/footer}"></th:block>
-        </div>
+      <div class="content-wrapper__inner">
+        <th:block th:replace="${content}"></th:block>
+        <th:block th:replace="~{_includes/footer}"></th:block>
+      </div>
     </div>
 
     <th:block th:replace="~{_includes/external}"></th:block>
-
-</body>
-
+  </body>
 </html>
