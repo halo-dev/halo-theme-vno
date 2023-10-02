@@ -1,8 +1,16 @@
 {
   "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
     "prettier": "prettier --write './templates/**/*.html'"
   },
   "devDependencies": {
-    "prettier": "^3.0.3"
+    "@types/node": "18",
+    "prettier": "^3.0.3",
+    "sass": "^1.68.0",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }
