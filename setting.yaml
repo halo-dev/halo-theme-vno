@@ -55,3 +55,16 @@ spec:
         - $formkit: text
           name: email
           label: Email
+    - group: development
+      label: 开发设置
+      formSchema:
+        - $formkit: radio
+          name: enabled
+          label: 开发模式
+          value: false
+          help: 仅供开发环境使用，开启此设置后，所有静态资源由 Vite 开发服务器提供，所以需要在本地启动 Vite 服务（pnpm dev）
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭

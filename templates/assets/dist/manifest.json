@@ -1,0 +1,36 @@
+{
+  "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.eot": {
+    "file": "fontawesome-webfont.eot",
+    "src": "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.eot"
+  },
+  "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.svg": {
+    "file": "fontawesome-webfont.svg",
+    "src": "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.svg"
+  },
+  "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.ttf": {
+    "file": "fontawesome-webfont.ttf",
+    "src": "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.ttf"
+  },
+  "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.woff": {
+    "file": "fontawesome-webfont.woff",
+    "src": "../node_modules/.pnpm/font-awesome@4.1.0/node_modules/font-awesome/fonts/fontawesome-webfont.woff"
+  },
+  "main.css": {
+    "file": "main.css",
+    "src": "main.css"
+  },
+  "main.ts": {
+    "assets": [
+      "fontawesome-webfont.eot",
+      "fontawesome-webfont.woff",
+      "fontawesome-webfont.ttf",
+      "fontawesome-webfont.svg"
+    ],
+    "css": [
+      "main.css"
+    ],
+    "file": "main.js",
+    "isEntry": true,
+    "src": "main.ts"
+  }
+}
