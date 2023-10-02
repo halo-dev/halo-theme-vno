@@ -5,13 +5,13 @@ spec:
   author:
     name: Wei Wang
     website: https://onevcat.com
-  description: null
-  logo: null
+  description:
+  logo:
   website: https://github.com/halo-dev/halo-theme-vno
   repo: https://github.com/halo-dev/halo-theme-vno
-  settingName: halo-setting-vno
-  configMapName: halo-configMap-vno
-  version: 0.0.0
-  require: ">= 2.0.0"
+  settingName: theme-vno-setting
+  configMapName: theme-vno-configMap
+  version: 2.0.0
+  require: ">=2.0.0"
 metadata:
   name: halo-theme-vno
