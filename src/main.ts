@@ -13,4 +13,4 @@ import "animate.css/source/bouncing_exits/bounceOutDown.css";
 import "animate.css/source/bouncing_exits/bounceOutLeft.css";
 import "animate.css/source/bouncing_exits/bounceOutRight.css";
 import "animate.css/source/bouncing_exits/bounceOutUp.css";
-import "font-awesome/scss/font-awesome.scss";
+import "font-awesome/css/font-awesome.css";

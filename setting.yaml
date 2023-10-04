@@ -5,7 +5,7 @@ metadata:
 spec:
   forms:
     - group: general
-      label: 基本设置
+      label: 首页设置
       formSchema:
         - $formkit: text
           name: welcome_message
@@ -40,21 +40,23 @@ spec:
           name: blog_button_description
           label: 博客按钮描述
           value: Visit blog
-    - group: sns
-      label: 社交资料设置
-      formSchema:
-        - $formkit: text
-          name: weibo
-          label: 微博
-        - $formkit: text
-          name: github
-          label: GitHub 链接
-        - $formkit: text
-          name: google_plus
-          label: Google Plus
-        - $formkit: text
-          name: email
-          label: Email
+        - $formkit: repeater
+          name: social_media
+          label: 社交媒体
+          value: []
+          children:
+            - $formkit: text
+              name: icon
+              label: 图标
+              validation: "required"
+              help: "支持 Font Awesome 4.x 的图标，如 fa fa-github，详见 https://fontawesome.com/v4/icons/"
+            - $formkit: text
+              name: name
+              label: 名称
+            - $formkit: text
+              name: url
+              label: 链接
+              validation: "required"
     - group: development
       label: 开发设置
       formSchema:

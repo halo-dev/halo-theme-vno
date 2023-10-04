@@ -21,9 +21,9 @@
 
         <span class="panel-cover__subtitle panel-subtitle" th:text="${site.subtitle}"></span>
         <hr class="panel-cover__divider" />
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
         <th:block th:if="${theme.config.general.welcome_message}">
           <p class="panel-cover__description" th:text="${theme.config.general.welcome_message}"></p>
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
         </th:block>
 
         <div class="navigation-wrapper">

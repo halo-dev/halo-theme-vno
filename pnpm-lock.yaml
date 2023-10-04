@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.1.1
     version: 4.1.1
   font-awesome:
-    specifier: 4.1.0
-    version: 4.1.0
+    specifier: 4.7.0
+    version: 4.7.0
 
 devDependencies:
   '@types/node':
@@ -306,8 +306,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /font-awesome@4.1.0:
-    resolution: {integrity: sha512-Xz/28Ec2BkEjmdfHtKZob3XJ+P5zUn8IIIKm9Lwv8XWQdIAEhyJFldMcnHFJKMAhEiRtXytAm2P7ZmWhjkffkA==}
+  /font-awesome@4.7.0:
+    resolution: {integrity: sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg==}
     engines: {node: '>=0.10.3'}
     dev: false
 
