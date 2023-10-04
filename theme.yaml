@@ -6,7 +6,7 @@ spec:
     name: Wei Wang
     website: https://onevcat.com
   description:
-  logo:
+  logo: /themes/halo-theme-vno/assets/images/icon.png
   website: https://github.com/halo-dev/halo-theme-vno
   repo: https://github.com/halo-dev/halo-theme-vno
   settingName: theme-vno-setting
