@@ -1,0 +1,72 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-vno-setting
+spec:
+  forms:
+    - group: general
+      label: 首页设置
+      formSchema:
+        - $formkit: text
+          name: welcome_message
+          label: 欢迎信息
+        - $formkit: attachment
+          name: cover_image
+          label: 首页背景图片
+        - $formkit: select
+          name: cover_color
+          label: 首页背景颜色
+          value: red
+          options:
+            - value: blue
+              label: blue
+            - value: green
+              label: green
+            - value: purple
+              label: purple
+            - value: red
+              label: red
+            - value: orange
+              label: orange
+            - value: slate
+              label: slate
+            - value: empty
+              label: 空
+        - $formkit: text
+          name: blog_button_title
+          label: 博客按钮名称
+          value: Blog
+        - $formkit: text
+          name: blog_button_description
+          label: 博客按钮描述
+          value: Visit blog
+        - $formkit: repeater
+          name: social_media
+          label: 社交媒体
+          value: []
+          children:
+            - $formkit: text
+              name: icon
+              label: 图标
+              validation: "required"
+              help: "支持 Font Awesome 4.x 的图标，如 fa fa-github，详见 https://fontawesome.com/v4/icons/"
+            - $formkit: text
+              name: name
+              label: 名称
+            - $formkit: text
+              name: url
+              label: 链接
+              validation: "required"
+    - group: development
+      label: 开发设置
+      formSchema:
+        - $formkit: radio
+          name: enabled
+          label: 开发模式
+          value: false
+          help: 仅供开发环境使用，开启此设置后，所有静态资源由 Vite 开发服务器提供，所以需要在本地启动 Vite 服务（pnpm dev）
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭

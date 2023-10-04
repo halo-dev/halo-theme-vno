@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" th:fragment="html (title,content,isPost)">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title th:text="${title}"></title>
+    <meta name="description" th:content="${site.subtitle}" />
+    <meta name="author" content="Wei Wang" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="${title!}" />
+    <meta name="twitter:description" th:content="${site.subtitle}" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${title!}" />
+    <meta property="og:description" th:content="${site.subtitle}" />
+
+    <th:block th:if="${theme.config.development.enabled}">
+      <script type="module" src="http://localhost:5173/@vite/client"></script>
+      <script type="module" src="http://localhost:5173/main.ts"></script>
+    </th:block>
+
+    <th:block th:unless="${theme.config.development.enabled}">
+      <link rel="manifest" th:href="@{/assets/dist/manifest.json}" />
+      <link rel="stylesheet" th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}" />
+      <script th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}" type="module"></script>
+    </th:block>
+  </head>
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+      <i class="fa fa-list btn-mobile-menu__icon"></i>
+      <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <th:block th:replace="~{_includes/side-panel :: side(${isPost})}"></th:block>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <th:block th:replace="${content}"></th:block>
+        <th:block th:replace="~{_includes/footer}"></th:block>
+      </div>
+    </div>
+
+    <th:block th:replace="~{_includes/external}"></th:block>
+  </body>
+</html>

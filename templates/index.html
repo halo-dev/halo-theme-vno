@@ -1,0 +1,54 @@
+<!doctype html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(title = ${site.title},  content = ~{::content},isPost = null)}"
+>
+  <th:block th:fragment="content">
+    <div class="main-post-list hidden">
+      <ol class="post-list">
+        <li th:each="post : ${posts.items}">
+          <h2 class="post-list__post-title post-title">
+            <a th:href="${post.status.permalink}" th:title="|访问 ${post.spec.title}|" th:text="${post.spec.title}"></a>
+          </h2>
+          <p class="excerpt" th:text="|${post.status.excerpt}&hellip;|"></p>
+          <div class="post-list__meta">
+            <time
+              th:datetime="${post.metadata.creationTimestamp}"
+              class="post-list__meta--date date"
+              th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
+            ></time>
+            &#8226;
+            <span class="post-list__meta--tags tags">
+              <th:block th:if="${#lists.size(post.tags) gt 0}">
+                <th:block th:each="tag : ${post.tags}">
+                  <a th:href="|${tag.status.permalink}#blog|" th:text="${tag.spec.displayName}"></a>&nbsp;
+                </th:block>
+              </th:block>
+            </span>
+            <a class="btn-border-small" th:href="${post.status.permalink}">继续阅读</a>
+          </div>
+          <hr class="post-list__divider" />
+        </li>
+      </ol>
+      <nav class="pagination" role="navigation" th:if="${posts.hasPrevious() || posts.hasNext()}">
+        <a
+          class="newer-posts pagination__newer btn btn-small btn-tertiary"
+          th:if="${posts.hasPrevious()}"
+          th:href="|@{${posts.prevUrl}}#blog|"
+        >
+          &larr; 最近
+        </a>
+
+        <span class="pagination__page-number" th:text="|${posts.page}/${posts.totalPages}|"></span>
+
+        <a
+          th:if="${posts.hasNext()}"
+          class="older-posts pagination__older btn btn-small btn-tertiary"
+          th:href="|@{${posts.nextUrl}}#blog|"
+        >
+          更早 &rarr;
+        </a>
+      </nav>
+    </div>
+  </th:block>
+</html>

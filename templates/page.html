@@ -1,0 +1,31 @@
+<!doctype html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(title = | ${singlePage.spec.title} - ${site.title}|,  content = ~{::content},isPost = true)}"
+>
+  <th:block th:fragment="content">
+    <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+        <div class="post-meta">
+          <time
+            th:datetime="${singlePage.metadata.creationTimestamp}"
+            itemprop="datePublished"
+            class="post-meta__date date"
+            th:text="${#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}"
+          ></time>
+        </div>
+        <h1 class="post-title" th:text="${singlePage.spec.title}"></h1>
+      </header>
+
+      <section class="post" th:utext="${singlePage.content.content}"></section>
+    </article>
+    <section class="post-comments">
+      <halo:comment
+        group="content.halo.run"
+        kind="SinglePage"
+        th:attr="name=${singlePage.metadata.name}"
+        colorScheme="'light'"
+      />
+    </section>
+  </th:block>
+</html>

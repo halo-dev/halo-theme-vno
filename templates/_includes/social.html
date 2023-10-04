@@ -1,0 +1,10 @@
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation" th:with="social_medias = ${theme.config.general.social_media}">
+    <li th:each="social_media : ${social_medias}" class="navigation__item">
+      <a th:href="${social_media.url}" th:title="${social_media.name}" target="_blank">
+        <i class="social" th:classappend="${social_media.icon}"></i>
+        <span class="label" th:text="${social_media.name}"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

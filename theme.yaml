@@ -1,11 +1,17 @@
-id: onevcat_vno
-name: Vno
-author:
-  name: Wei Wang
-  website: https://onevcat.com
-description:
-logo:
-website: https://github.com/halo-dev/halo-theme-vno
-repo: https://github.com/halo-dev/halo-theme-vno
-version: 1.4.1
-require: 1.3.0
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+spec:
+  displayName: Vno
+  author:
+    name: Wei Wang
+    website: https://onevcat.com
+  description:
+  logo: /themes/halo-theme-vno/assets/images/icon.png
+  website: https://github.com/halo-dev/halo-theme-vno
+  repo: https://github.com/halo-dev/halo-theme-vno
+  settingName: theme-vno-setting
+  configMapName: theme-vno-configMap
+  version: 2.0.0
+  require: ">=2.0.0"
+metadata:
+  name: halo-theme-vno
