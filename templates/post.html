@@ -35,9 +35,7 @@
               th:title="|link to ${postCursor.previous.spec.title}|"
             ></a>
           </h2>
-          <p class="excerpt" th:utext="${postCursor.previous.status.excerpt}">
-            <th:block>&hellip;</th:block>
-          </p>
+          <p class="excerpt" th:text="|${postCursor.previous.status.excerpt}&hellip;|"></p>
           <div class="post-list__meta">
             <time
               th:datetime="${postCursor.previous.metadata.creationTimestamp}"
@@ -55,9 +53,7 @@
           <h2 class="post-list__post-title post-title">
             <a th:href="@{${postCursor.next.status.permalink}}" th:title="|link to ${postCursor.next.spec.title}|"></a>
           </h2>
-          <p class="excerpt" th:utext="${postCursor.next.status.excerpt}">
-            <th:block>&hellip;</th:block>
-          </p>
+          <p class="excerpt" th:text="|${postCursor.next.status.excerpt}&hellip;|"></p>
           <div class="post-list__meta">
             <time
               th:datetime="${postCursor.next.metadata.creationTimestamp}"
@@ -68,6 +64,9 @@
           </div>
         </div>
       </th:block>
+    </section>
+    <section class="post-comments">
+      <halo:comment group="content.halo.run" kind="Post" th:attr="name=${post.metadata.name}" colorScheme="'light'" />
     </section>
   </th:block>
 </html>

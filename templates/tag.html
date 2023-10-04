@@ -10,7 +10,7 @@
           <h2 class="post-list__post-title post-title">
             <a th:href="${post.status.permalink}" th:title="|访问 ${post.spec.title}|" th:text="${post.spec.title}"></a>
           </h2>
-          <p class="excerpt" th:utext="${post.status.excerpt}">&hellip;</p>
+          <p class="excerpt" th:text="${post.status.excerpt}">&hellip;</p>
           <div class="post-list__meta">
             <time
               th:datetime="${post.metadata.creationTimestamp}"
@@ -36,8 +36,9 @@
           class="newer-posts pagination__newer btn btn-small btn-tertiary"
           th:if="${posts.hasPrevious()}"
           th:href="|@{${posts.prevUrl}}#blog|"
-          >&larr; 最近</a
         >
+          &larr; 最近
+        </a>
 
         <span class="pagination__page-number" th:text="|${posts.page}/${posts.totalPages}|"></span>
 
@@ -45,8 +46,9 @@
           th:if="${posts.hasNext()}"
           class="older-posts pagination__older btn btn-small btn-tertiary"
           th:href="|@{${posts.nextUrl}}#blog|"
-          >更早 &rarr;</a
         >
+          更早 &rarr;
+        </a>
       </nav>
     </div>
   </th:block>

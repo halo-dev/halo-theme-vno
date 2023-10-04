@@ -7,9 +7,9 @@
   <div class="panel-main">
     <div class="panel-main__inner panel-inverted">
       <div class="panel-main__content">
-        <a th:href="|${site.url}#blog|" th:title="|前往 ${site.title} 的主页|" class="blog-button"
-          ><img th:src="${site.logo}" width="80" th:alt="|${site.title} logo|" class="panel-cover__logo logo"
-        /></a>
+        <a th:href="|${site.url}#blog|" th:title="|前往 ${site.title} 的主页|" class="blog-button">
+          <img th:src="${site.logo}" width="80" th:alt="|${site.title} Logo|" class="panel-cover__logo logo" />
+        </a>
         <h1 class="panel-cover__title panel-title">
           <a
             th:href="${site.url}"
@@ -29,15 +29,15 @@
         <div class="navigation-wrapper">
           <div>
             <nav class="cover-navigation cover-navigation--primary">
-              <li class="navigation__item">
-                <a
-                  class="blog-button"
-                  th:title="${theme.config.general.blog_button_description}"
-                  th:href="|${site.url}#blog|"
-                  th:text="${theme.config.general.blog_button_title}"
-                ></a>
-              </li>
               <ul class="navigation" th:with="menuItems = ${menuFinder.getPrimary().menuItems}">
+                <li class="navigation__item">
+                  <a
+                    class="blog-button"
+                    th:title="${theme.config.general.blog_button_description}"
+                    th:href="|${site.url}#blog|"
+                    th:text="${theme.config.general.blog_button_title}"
+                  ></a>
+                </li>
                 <li th:each="menuItem : ${menuItems}" class="navigation__item">
                   <a
                     th:href="@{${menuItem.status.href}}"
